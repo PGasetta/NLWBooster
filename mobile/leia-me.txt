@@ -1,0 +1,33 @@
+https://github.com/PGasetta/NLWBooster.git
+
+npm start
+
+expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto
+npm install @react-navigation/native
+npm install @react-navigation/stack
+
+
+https://github.com/Rocketseat/expo-common-issues
+
+
+https://reactnavigation.org/
+https://reactnavigation.org/docs/getting-started
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+expo install react-native-maps
+expo install expo-constants
+
+expo install react-native-svg
+
+npm install axios
+
+expo install expo-location
+
+
+
+https://docs.expo.io/versions/latest/sdk/mail-composer/
+expo install expo-mail-composer
+
+
+https://www.npmjs.com/package/react-native-picker-select
+    npm install react-native-picker-select

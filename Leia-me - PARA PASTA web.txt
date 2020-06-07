@@ -1,0 +1,3 @@
+
+Criando a pasta e os arquivo dentro de "web"
+npx create-react-app web --template=typescript

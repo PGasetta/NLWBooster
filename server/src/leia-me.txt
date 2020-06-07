@@ -1,0 +1,77 @@
+Instalando express
+-> npm install express
+
+    *-D significa dependencia de desenvolvimento
+-> npm install @types/express -D
+
+"INTERPRETADOR DE TypeScript"
+    *-D significa dependencia de desenvolvimento
+-> npm install ts-node -D
+
+TypeScript
+    *-D significa dependencia de desenvolvimento
+-> npm install typescript -D
+
+Criar aquivo de configuração do TypeScript
+-> npx tsc --init
+
+
+Executar o Server
+-> npx ts-node src/server.ts
+
+    Este componente vai ficar olhando os códigos para identificar alterações e reiniciar automáticamente o server
+    -> npm install ts-node-dev -D
+    Executar este cara ao invés de: npx ts-node src/server.ts
+    -> npx ts-node-dev src/server.ts
+
+        -> arquivo package.json editado
+            {
+                "name": "server",
+                "version": "1.0.0",
+                "description": "",
+                "main": "index.js",
+                "scripts": {
+        ->          "dev": "npx ts-node-dev src/server.ts"
+                },
+
+    AGORA UTILIZAR ESTE COMANDO
+    -> npm run dev
+
+
+
+Componente para gerenciar banco de dados
+-> npm install knex
+
+
+-> npm install sqlite3
+
+seed serve para popular a base de dados com dados padrões
+
+
+    Torna o carregamento em desenvolvimento mais rápido
+    -> --transpileOnly --ignore-watch node_modules
+        "scripts": {
+            "dev": "npx ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
+
+
+
+npm run knex:migrate
+npm run knex:seed   
+
+
+npm install cors
+    npm install @types/cors
+
+
+
+ctrl + shift + q  executa comandos no banco
+
+
+//SERÁ USADA NO UPLOAD DE IMAGEM -> verificar função filter (trata tipos de arquivos e tamanho)
+npm install multer
+    npm install @types/multer -D
+
+
+//para validações
+npm install celebrate
+    npm install @types/hapi__joi -D

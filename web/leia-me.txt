@@ -1,0 +1,31 @@
+
+
+pacote de icones
+
+-> npm install react-icons
+
+biblioteca de roteamento
+-> npm install react-router-dom
+    -> npm install @types/react-router-dom -D
+
+biblioteca de mapa
+-> npm install leaflet react-leaflet
+    -> npm install @types/react-leaflet -D
+
+    https://leafletjs.com/examples/quick-start/
+    https://react-leaflet.js.org/docs/en/examples
+        https://github.com/PaulLeCam/react-leaflet/blob/master/example/components/simple.js
+
+
+npm install axios
+
+
+npm install -g expo-cli
+
+
+https://react-dropzone.js.org/
+    npm install --save react-dropzone
+
+
+https://github.com/jquense/yup
+    
