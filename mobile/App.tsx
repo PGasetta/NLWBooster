@@ -16,7 +16,6 @@ export default function App() {
  if(!fontsLoaded){
    return <AppLoading />
  }
-
   return (
     <>
       <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent/>
