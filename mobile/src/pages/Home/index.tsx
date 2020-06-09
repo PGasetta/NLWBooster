@@ -3,8 +3,9 @@ import { Feather as Icon } from '@expo/vector-icons';
 import { View, Image, ImageBackground, StyleSheet, Text, KeyboardAvoidingView, Platform } from 'react-native';
 import { RectButton, TextInput } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
-import RNPickerSelect from 'react-native-picker-select';
+import RNPickerSelect  from 'react-native-picker-select';
 import api from '../../services/api';
+//import SelectPicker from '../../components/SelectPicker';
 
 interface Uf{
   id: number,
@@ -48,13 +49,15 @@ const Home = () =>{
       });
     }
 
-    function handleSelectUF(event: ChangeEvent<HTMLSelectElement>){
-      const uf = event.target.value;
+    function handleSelectUF(event: any){//}: ChangeEvent<HTMLSelectElement>){
+      //console.log(event);
+      const uf = event;// event.target.value;
       setSelectedUF(uf);
     }
     
-    function handleSelectCidade(event: ChangeEvent<HTMLSelectElement>){
-        const cidade = event.target.value;
+    function handleSelectCidade(event: any){//ChangeEvent<HTMLSelectElement>){
+        const cidade = event;//.target.value;
+        //console.log(cidade);
         setSelectedCidade(cidade);
     }
 
@@ -72,13 +75,55 @@ const Home = () =>{
               </View>
             </View>
             <View style={styles.footer}>
-                <TextInput 
-                  style={styles.input}
-                  placeholder="Digite a UF"
+                <RNPickerSelect
+                  style={{
+                    ...pickerSelectStyles,
+                    iconContainer: {
+                      top: 20,
+                      right: 10,
+                    },
+                    placeholder: {
+                      color: '#6C6C80',
+                      fontSize: 12,
+                      fontWeight: 'bold',
+                    },
+                  }}
+                  placeholder={{
+                    label: 'Selecione a UF',
+                    value: 0,
+                    color: 'black',
+                  }}
+                  onValueChange={ (value) => handleSelectUF(value)}
+                  value={selectedUf}
+                    items={[...ufs.map(uf=>(
+                      { label: uf.sigla, value: uf.sigla }
+                    ))]}
                 />
-                <TextInput 
-                  style={styles.input}
-                  placeholder="Digite a Cidade"
+
+
+                <RNPickerSelect
+                  style={{
+                    ...pickerSelectStyles,
+                    iconContainer: {
+                      top: 20,
+                      right: 10,
+                    },
+                    placeholder: {
+                      color: '#6C6C80',
+                      fontSize: 12,
+                      fontWeight: 'bold',
+                    },
+                  }}
+                  placeholder={{
+                    label: 'Selecione a Cidade',
+                    value: 0,
+                    color: 'black',
+                  }}
+                  onValueChange={ (value) => handleSelectCidade(value)}
+                  value={selectedCidade}
+                    items={[...cidades.map(cidade=>(
+                      { label: cidade.nome, value: cidade.nome }
+                    ))]}
                 />
 
                 <RectButton style={styles.button} onPress={handleNavigationToPoints}>
@@ -94,6 +139,27 @@ const Home = () =>{
         </KeyboardAvoidingView>
     )
 };
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+  
+    height: 60,
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    marginBottom: 8,
+    paddingHorizontal: 24,
+    fontSize: 16,
+
+  },
+  inputAndroid: {
+    height: 60,
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    marginBottom: 8,
+    paddingHorizontal: 24,
+    fontSize: 16,
+  },
+});
 
 const styles = StyleSheet.create({
     container: {

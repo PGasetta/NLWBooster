@@ -60,6 +60,7 @@ const Points = () => {
     },[]);
 
     useEffect(() => {
+        //console.log(routeParams.uf);
         api.get('points', {
             params:{
                 city: routeParams.city,
@@ -67,6 +68,7 @@ const Points = () => {
                 items: selectedItems
             }
         }).then(response => {
+            //console.log(response.data);
             setPoints(response.data);
         })
     },[selectedItems]);

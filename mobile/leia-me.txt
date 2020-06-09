@@ -31,3 +31,8 @@ expo install expo-mail-composer
 
 https://www.npmjs.com/package/react-native-picker-select
     npm install react-native-picker-select
+
+
+
+npm install react-native-select-plus --save
+    npm install @types/react-native-select-plus
